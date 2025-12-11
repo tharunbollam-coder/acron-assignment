@@ -12,6 +12,7 @@
   "dependencies": {
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/postcss": "^4.1.17",
+    "autoprefixer": "^10.4.22",
     "axios": "^1.13.2",
     "lucide-react": "^0.560.0",
     "react": "^19.2.0",
