@@ -19,16 +19,23 @@ mongoose.connect(process.env.MONGODB_URI)
 .catch((err) => console.error('MongoDB connection error:', err));
 
 // Routes
+console.log('Registering API routes...');
 app.use('/api/courts', require('./routes/courts'));
 app.use('/api/coaches', require('./routes/coaches'));
 app.use('/api/equipment', require('./routes/equipment'));
 app.use('/api/bookings', require('./routes/bookings'));
 app.use('/api/pricing', require('./routes/pricing'));
 app.use('/api/admin', require('./routes/admin'));
+console.log('API routes registered');
 
 // Basic route
 app.get('/', (req, res) => {
   res.json({ message: 'Sports Facility Booking API is running!' });
+});
+
+// Test API route
+app.get('/api/test', (req, res) => {
+  res.json({ message: 'API routes are working!', timestamp: new Date().toISOString() });
 });
 
 // Error handling middleware
